@@ -27,7 +27,47 @@ Before running this project, make sure you have:
 - PostgreSQL database server
 - Redis server
 
+**OR** use Docker (recommended):
+- Docker and Docker Compose
+
 ## Installation
+
+### Option 1: Using Docker (Recommended)
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd Crud-redis-
+```
+
+2. Install Node.js dependencies:
+```bash
+npm install
+```
+
+3. Start PostgreSQL and Redis using Docker:
+```bash
+docker-compose up -d
+```
+
+4. The `.env` file is already configured for Docker. No changes needed!
+
+5. Generate Prisma Client:
+```bash
+npm run db:generate
+```
+
+6. Run database migrations:
+```bash
+npm run db:migrate
+```
+
+7. Run the application:
+```bash
+npm start
+```
+
+### Option 2: Using Local Services
 
 1. Clone the repository:
 ```bash
@@ -77,6 +117,12 @@ This will execute a demo showcasing all CRUD operations with Redis caching.
 - `npm run db:migrate` - Run database migrations
 - `npm run db:generate` - Generate Prisma Client
 - `npm run db:studio` - Open Prisma Studio (database GUI)
+
+## Docker Commands
+
+- `docker-compose up -d` - Start PostgreSQL and Redis in the background
+- `docker-compose down` - Stop and remove containers
+- `docker-compose logs -f` - View logs from containers
 
 ## Project Structure
 
